@@ -1,0 +1,50 @@
+body{ padding:0px; margin:0px;
+	display: block;}
+
+#container {
+	position: relative;
+}
+
+#container canvas, #overlay {
+	position: absolute;
+}
+
+#page, .conts{
+	position: absolute;
+}
+
+@media (min-width: 768px) {
+	.navbar
+	{
+		max-width:300px;
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.navbar-nav,
+	.navbar-nav > li,
+	.navbar-left,
+	.navbar-right,
+	.navbar-header
+	{float:none !important;}
+
+	.navbar-right .dropdown-menu {left:0;right:auto;}
+	.navbar-collapse .navbar-nav.navbar-right:last-child {
+		margin-right: 0;
+	}
+}
+
+a, #innerNav, #topNav, #nav{
+	background: #202020;
+	border-color: #202020;
+}
+
+nav a:hover {
+	color: #16a3a1 !important;
+}
+
+.vcenter {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
