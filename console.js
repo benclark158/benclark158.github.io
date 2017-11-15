@@ -74,7 +74,7 @@ $(document).keydown(function(e) {
         keys = 0;
         append(newCommand());
     }
-	if((e.which >= 32 && e.which <= 126) || (e.which >= 160 && e.which <= 255)){
+	if((e.which >= 32 && e.which <= 255)){
 		//else
 		countKeys();
 	}
