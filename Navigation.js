@@ -143,7 +143,7 @@ function closeWebWindow(){
 		$("#contents").removeClass("noPointerEvnt");
 		$("#webWindow").addClass("noPointerEvnt");
 		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
-		document.getElementById("webWindow").innerHTML = "<div></div>";
+		//document.getElementById("webWindow").innerHTML = "<div></div>";
 		isWeb = 0;
 	}
 }
