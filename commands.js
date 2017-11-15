@@ -5,11 +5,24 @@ function matchCommand(command, args){
 			return runOpen(args);
 		case "ls":
 			return runList(args);
+		case "start":
+			return runStart(args);
 		default:
 			return runDefault('unknown command');
 	} 
 }
 
+/*
+ * Code for the 'start' command
+ * runs a GUI version of the system
+ */
+function runStart(args){
+	//TODO
+}
+
+/*
+ * Code for the 'ls' list command
+ */
 function runList(args){
 	if(args.length == 1){
 		return pages();
