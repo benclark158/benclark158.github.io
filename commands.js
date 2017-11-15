@@ -8,7 +8,7 @@ function matchCommand(command, args){
 		case "start":
 			return runStart(args);
 		default:
-			return runDefault('unknown command');
+			return runDefault('unknown command - ' + command);
 	} 
 }
 
@@ -44,7 +44,7 @@ function runOpen(args){
 			openWebWindow();
 			return 'Page closed.';
 		} else {
-			return runDefault('invalid page');
+			return runDefault('invalid page - ' + args[i]);
 		}
 	} else {
 		return runDefault('invalid args');
