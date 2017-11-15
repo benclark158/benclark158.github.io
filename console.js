@@ -13,6 +13,7 @@ window.onload = function WindowLoad(event) {
 
 //Prevents backspace?
 $(document).keydown(function(e) {
+	alert(e.which);
     console.log(e.which);
 	if(e.which == 27){
 		//escape
