@@ -150,14 +150,15 @@ function parseCommand() {
     var console = document.getElementById("console");
 
     if (console != null) {
-		var array = console.value.substr(console.value.length - keys).split(' ');
+		var input = console.value.substr(console.value.length - keys);
+		var array = input.split(' ');
         var cmd = array[0];
         append("\n");
         if(cmd == ''){
             return;
         }
 
-        commands.push(cmd);
+        commands.push(input);
 		
 		if(cmd == "clear"){
 			clear();

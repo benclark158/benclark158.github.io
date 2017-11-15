@@ -23,7 +23,7 @@ function runList(args){
  */
 function runOpen(args){
 	if(args.length == 2){
-		if(!$.inArray(args[1], pages())){
+		if(inArray(pages(), args[1])){
 			append('Opening page...\n');
 			
 			//document.getElementById("htmlSeg").innerHTML = home();
@@ -40,6 +40,15 @@ function runOpen(args){
 
 function runDefault(reason){
 	return "An error occurred : " + reason;
+}
+
+function inArray(array, value){
+	for(var i = 0; i < array.length; i++){
+		if(array[i] == value){
+			return true;
+		}
+	}
+	return false;
 }
 
 function pages(){
