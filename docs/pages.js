@@ -3,7 +3,7 @@ function openPage(page){
 
     $.ajax({
         url: "docs/" + page + ".html",
-        type: "POST",
+        type: "GET",
         data: {},
         cache: false,
         success: function (data, status) {
