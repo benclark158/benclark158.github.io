@@ -17,8 +17,7 @@ $(document).keydown(function(e) {
 	if(e.which == 27){
 		//escape
 		closeCurrent();
-	}
-    if(e.which >= 33 && e.which <= 40){
+	} else if(e.which >= 33 && e.which <= 40){
         e.preventDefault();
         if(e.which == 38){
             //up
@@ -44,20 +43,20 @@ $(document).keydown(function(e) {
                 cmdAppend("");
             }
         }
-    }
-    if (e.which == 8) {
+    } else if (e.which == 8) {
         if (keys <= 0) {
             e.preventDefault();
         } else {
             keys--;
         }
-    }
-    if (e.which == 13) {
+    } else if (e.which == 13) {
         e.preventDefault();
         parseCommand();
         keys = 0;
         append(newCommand());
-    }
+    } else {
+		countKeys();
+	}
 });
 
 function newCommand() {
