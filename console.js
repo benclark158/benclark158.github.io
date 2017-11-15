@@ -14,6 +14,10 @@ window.onload = function WindowLoad(event) {
 //Prevents backspace?
 $(document).keydown(function(e) {
     console.log(e.which);
+	if(e.which == 27){
+		//escape
+		closeCurrent();
+	}
     if(e.which >= 33 && e.which <= 40){
         e.preventDefault();
         if(e.which == 38){
@@ -134,27 +138,38 @@ function cmdAppend(str){
     }
 }
 
+function clear(){
+	var console = document.getElementById("console");
+
+    if (console != null) {
+		console.value = "";
+	}
+}
+
 function parseCommand() {
     var console = document.getElementById("console");
 
     if (console != null) {
-        var cmd = console.value.substr(console.value.length - keys).split(' ')[0];
-
+		var array = console.value.substr(console.value.length - keys).split(' ');
+        var cmd = array[0];
         append("\n");
         if(cmd == ''){
             return;
         }
 
         commands.push(cmd);
-
-        if(cmd == "ascii"){
+		
+		if(cmd == "clear"){
+			clear();
+			text = "";
+			return;
+		}
+        else if(cmd == "ascii"){
             append(ascii());
         } else if (cmd == "welcome"){
             append(help());
-        } else if (cmd == "ls") {
-            append("There are no pages available just yet, hold tight...");
         } else {
-            append("Unknown command - '" + cmd  + "'");
+            append(matchCommand(cmd, array));
         }
     }
     append("\n");
@@ -162,7 +177,7 @@ function parseCommand() {
 }
 
 function whenClicked(){
-    alert("i got a click");
+    //alert("i got a click");
     var console = document.getElementById("console");
 
     if (console != null) {

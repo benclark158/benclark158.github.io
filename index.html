@@ -12,6 +12,7 @@
 	<script type="text/javascript" src="Background.js"></script>
 	<script type="text/javascript" src="Navigation.js"></script>
 	<script type="text/javascript" src="console.js"></script>
+	<script type="text/javascript" src="commands.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -24,10 +25,49 @@
 <div id="overlay" style="">
 	<div id="page" style="">
 		<div class="conts guiContainer" style="">
-			<div class="conts text-center consoleBox" id="contents" style="pointer-events: all; width: 75%; height: 75%; padding-left: 0px;">
-				<form class="formConsole">
+			<div id="leftWindows" class="windowLeft noPointerEvnt" style="opacity: 0;">
+				<div class="minWindow">
+					Website Command Line
+					<div class="windowBar" style="display: inline;" onclick="onMaximiseButton();">
+						<span class="winButton minButton">
+							<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
+						</span>
+						<span class="winButton maxButton">
+							<span style="padding: 0px 4px; margin-left: 4px;">&square;</span>
+						</span>
+						<span class="winButton closeButton">
+							<span style="padding: 0px 4px; margin: 0px;">&times;</span>
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="conts centers consoleBox" id="contents" style="pointer-events: all; width: 75%; height: 75%; padding-left: 0px;">
+				<div id="windowBar" class="windowBar">
+					<span class="winButton minButton" onclick="onMinimiseButton();">
+						<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
+					</span>
+					<span class="winButton maxButton" onclick="onMaximiseButton();">
+						<span style="padding: 0px 4px; margin-left: 4px;">&square;</span>
+					</span>
+					<span class="winButton closeButton" onclick="onCloseButton();">
+						<span style="padding: 0px 4px; margin: 0px;">&times;</span>
+					</span>
+				</div>
+				<form id="consoleForm" class="formConsole">
 					<textarea id="console" class="textConsole" spellcheck="false" onkeypress="countKeys();" autofocus ></textarea>
 				</form>
+			</div>
+			<div class="conts centers noPointerEvnt webWindow" id="webWindow" style="width: 50%; height: 50%; opacity: 0">
+				<div class="webBar" style="text-align: right;">
+					<div class="windowBar" style="display: inline;" onclick="closeWebWindow();">
+						<span class="winButton closeButton">
+							<span style="padding: 0px 4px; margin: 0px;">&times;</span>
+						</span>
+					</div>
+				</div>
+				<div id="htmlSeg" class="htmlPage">
+					
+				<div>
 			</div>
 		</div><!--
 		<div id="nav" style="z-index: 3; height: 100%; width: 60px;">

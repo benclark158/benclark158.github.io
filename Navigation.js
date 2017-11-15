@@ -84,3 +84,76 @@ function openModal(id, title, body, footer, view) {
 		$('#' + id).modal(view);
 	}
 }
+
+
+//=====================================
+//			New functions
+//=====================================
+
+var isMax = 0;
+var isMin = 0;
+var isWeb = 0;
+
+function onMaximiseButton(){
+	console.log("isMax - " + isMax);
+	console.log("isMin - " + isMin);
+	if(isMin == 1){
+		$("#contents").animate({width: '75%', height: '75%', opacity: '1'}, "fast");
+		$("#leftWindows").animate({opacity: '0'}, "fast");
+		$("#leftWindows").addClass("noPointerEvnt");
+		
+		//
+		isMin = 0;
+	} else {
+		if(isMax == 0){
+			$("#contents").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
+			isMax = 1;
+		} else {
+			$("#contents").animate({width: '75%', height: '75%', opacity: '1'}, "fast");
+			isMax = 0;
+		}
+	}
+}
+
+function onMinimiseButton(){
+	if(isMin == 0){
+		$("#contents").addClass("noPointerEvnt");
+		$("#contents").animate({width: '0%', height: '0%', opacity: '0'}, "fast");
+		$("#leftWindows").animate({opacity: '1'}, "fast");
+		$("#leftWindows").removeClass("noPointerEvnt");
+		isMin = 1;
+	}
+}
+
+function onCloseButton(){
+	$("#contents").animate({width: '0%', height: '0%', opacity: '0'}, "fast");
+}
+
+function openWebWindow(){
+	if(isWeb == 0){
+		$("#contents").addClass("noPointerEvnt");
+		$("#webWindow").removeClass("noPointerEvnt");
+		$("#webWindow").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
+		isWeb = 1;
+	}
+}
+
+function closeWebWindow(){
+	if(isWeb == 1){
+		$("#contents").removeClass("noPointerEvnt");
+		$("#webWindow").addClass("noPointerEvnt");
+		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
+		document.getElementById("webWindow").innerHTML = "";
+		isWeb = 0;
+	}
+}
+
+function closeCurrent(){
+	if(isWeb == 1){
+		closeWebWindow();
+	} else if(isMax == 1){
+		onMaximiseButton();
+	} else {
+		onMinimiseButton();
+	}
+}

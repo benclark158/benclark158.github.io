@@ -25,8 +25,8 @@ canvas, #overlay {
 
 .formConsole {
 	width: 99%;
-	height: 99%;
-	padding-top: 4%;
+	height: 95%;
+	/*padding-top: 4%;*/
 	padding-left: 1%;
 }
 
@@ -45,18 +45,71 @@ canvas, #overlay {
 	font-size: 18px;
 }
 
-.guiContainer {
+.guiContainer{
 	z-index: 2;
 	width: 100%;
 	height: 100%;
 	padding: 0px;
-	pointer-events: none;
+	/*pointer-events: none;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+.noPointerEvnt {
+	pointer-events: none;
+}
 
+.windowLeft {
+	z-index: 2;
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	/*pointer-events: none;*/
+	display: flex;
+	color: white;
+}
+
+.minWindow {
+	height: 3%;
+	background: rgba(25, 25, 25, 0.6);
+}
+
+.windowBar {
+	margin: 2px 0px;
+	text-align: right;
+	padding-right: 3px;
+}
+
+.winButton {
+	margin: 4px;
+	width: fit-content;
+	border: 1px solid black;
+	color: white;
+}
+
+.minButton {
+	background-color: rgba(0, 0, 255, 0.6);
+}
+
+.maxButton {
+	background-color: rgba(0, 0, 255, 0.6);
+}
+
+.closeButton {
+	background-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Web Window */
+
+.webWindow {
+	background-color: rgba(200, 200, 200, 0.5);
+}
+
+.htmlPage {
+	width: 100%;
+	background-color: white;
+}
 
 /*
 ==========================
