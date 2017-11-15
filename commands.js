@@ -40,7 +40,9 @@ function runOpen(args){
 			append('Opening page...\n');
 			
 			//document.getElementById("htmlSeg").innerHTML = home();
-			
+
+			openPage(args[1]);
+
 			openWebWindow();
 			return 'Page closed.';
 		} else {
