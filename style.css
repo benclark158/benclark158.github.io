@@ -42,7 +42,7 @@ canvas, #overlay {
 	color: rgba(0, 255, 0, 0.9);
 	padding: 8px;
 	font-family: courier new;
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .guiContainer {
