@@ -160,3 +160,15 @@ function parseCommand() {
     append("\n");
     text = console.value;
 }
+
+function whenClicked(){
+    alert("i got a click");
+    var console = document.getElementById("console");
+
+    if (console != null) {
+        var val = console.value.length;
+        console.focus();
+        console.selectionStart = val;
+        console.selectionEnd = val;
+    }
+}
