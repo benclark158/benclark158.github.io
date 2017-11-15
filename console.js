@@ -13,7 +13,6 @@ window.onload = function WindowLoad(event) {
 
 //Prevents backspace?
 $(document).keydown(function(e) {
-	alert(e.which);
     console.log(e.which);
 	if(e.which == 27){
 		//escape
@@ -58,9 +57,9 @@ $(document).keydown(function(e) {
         parseCommand();
         keys = 0;
         append(newCommand());
-    } else {
+    }
+	if((e.which >= 32 && e.which <= 126) || (e.which >= 160 && e.which <= 255)){
 		//else
-		alert("counting");
 		countKeys();
 	}
 });
