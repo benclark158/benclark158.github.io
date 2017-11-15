@@ -1,5 +1,11 @@
 
 function openPage(page) {
+
+    if(page == "projects"){
+        openProjectsPage();
+        return;
+    }
+
     $.ajax({
         url: "docs/" + page + ".html",
         type: "GET",
@@ -19,4 +25,8 @@ function openPage(page) {
             alert("error outer");
         }
     });
+}
+
+function openProjectsPage(){
+
 }
