@@ -19,6 +19,7 @@ $(document).keydown(function(e) {
 		//escape
 		closeCurrent();
 	} else if(e.which >= 33 && e.which <= 40){
+		//up down left right home end pageup pagedown
         e.preventDefault();
         if(e.which == 38){
             //up
@@ -45,17 +46,21 @@ $(document).keydown(function(e) {
             }
         }
     } else if (e.which == 8) {
+		//backspace
         if (keys <= 0) {
             e.preventDefault();
         } else {
             keys--;
         }
     } else if (e.which == 13) {
+		//enter
         e.preventDefault();
         parseCommand();
         keys = 0;
         append(newCommand());
     } else {
+		//else
+		alert("counting");
 		countKeys();
 	}
 });
