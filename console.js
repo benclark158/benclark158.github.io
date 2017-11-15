@@ -3,6 +3,13 @@ var text = "";
 var commands = [];
 var dirCount = 0;
 
+
+$( function() {
+    //console.log("drag");
+    //$( "#contents" ).draggable();
+    //$( "#leftWindows" ).draggable();
+} );
+
 //Sets text on load
 window.onload = function WindowLoad(event) {
     append(help());

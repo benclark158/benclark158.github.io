@@ -7,6 +7,8 @@ function matchCommand(command, args){
 			return runList(args);
 		case "start":
 			return runStart(args);
+        case "project":
+            return runProject(args);
 		default:
 			return runDefault('unknown command - ' + command);
 	} 
@@ -32,21 +34,43 @@ function runList(args){
 }
 
 /*
+ * Code for the project version of open
+ */
+function runProject(args){
+    if(args.length == 2){
+        if(inArray(projects(), args[1])){
+
+            openProject(args[1]);
+
+            openWebWindow();
+
+            //while(isWeb == 1);
+
+            return 'Opening project...';
+        } else {
+            return runDefault('invalid project - ' + args[1]);
+        }
+    } else {
+        return runDefault('invalid args');
+    }
+}
+
+/*
  * Code for the 'open' command
  */
 function runOpen(args){
 	if(args.length == 2){
 		if(inArray(pages(), args[1])){
-			append('Opening page...\n');
-			
-			//document.getElementById("htmlSeg").innerHTML = home();
 
 			openPage(args[1]);
 
 			openWebWindow();
-			return 'Page closed.';
+
+			//while(isWeb == 1);
+
+			return 'Opening page...';
 		} else {
-			return runDefault('invalid page - ' + args[i]);
+			return runDefault('invalid page - ' + args[1]);
 		}
 	} else {
 		return runDefault('invalid args');

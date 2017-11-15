@@ -22,11 +22,41 @@ function openPage(page) {
         },
         error: function () {
             //create an error message
-            alert("error outer");
+            //alert("error outer");
+            console.error("ajax failed :/");
         }
     });
 }
 
 function openProjectsPage(){
 
+    var insert = "";
+
+
+    $.ajax({
+        url: "docs/projects.html",
+        type: "GET",
+        data: {},
+        cache: false,
+        success: function (data, status) {
+            //create a success messsage
+
+            data = data.replace('This site is open source. <a href="https://github.com/benclark158/benclark158.github.io/edit/master/docs/home.md">Improve this page</a>.', 'Copyright Ben Clark 2017.');
+
+            data = data.replace('<h1><a href="https://benclark158.github.io/">benclark158.github.io</a></h1>', '');
+
+            data = data.replace('[INSERT #1]', insert);
+
+            document.getElementById("htmlSeg").innerHTML = data;
+        },
+        error: function () {
+            //create an error message
+            //alert("error outer");
+            console.error("ajax failed :/");
+        }
+    });
+}
+
+function openProject(project){
+    return openPage("projects/" + project);
 }
