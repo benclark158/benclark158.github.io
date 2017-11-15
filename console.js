@@ -8,7 +8,8 @@ window.onload = function WindowLoad(event) {
     append(help());
     append(newCommand());
 	if(checkMobile()){
-		alert("MOBILE DEVICE");
+		//alert("MOBILE DEVICE");
+		openWebWindow();
 	}
     //alert("Page is loaded");
 }
