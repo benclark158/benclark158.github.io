@@ -2,28 +2,13 @@
 function openPage(page){
 
     $.ajax({
-        url: "docs/" + page + ".md",
+        url: "docs/" + page + ".html",
         type: "POST",
         data: {},
         cache: false,
-        success: function (data, status){
+        success: function (data, status) {
             //create a success messsage
-            $.ajax({
-                url: "https://helloacm.com/api/markdown/",
-                type: "POST",
-                data: {
-                    s: markup
-                },
-                cache: false,
-                success: function (data, status){
-                    //create a success messsage
-                    alert("worked - " + data);
-                },
-                error: function (){
-                    //create an error message
-                    alert("error inner");
-                }
-            });
+            alert("worked - " + data);
         },
         error: function (){
             //create an error message
