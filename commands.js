@@ -27,9 +27,9 @@ function runStart(args){
  */
 function runList(args){
 	if(args.length == 1){
-		return pages();
+		return pages().toString().replace(/,/g, "\t").replace(/ /g, "_");
 	} else if(args[1] == "p" || args[1] == "projects"){
-		return projects();
+		return projects().toString().replace(/,/g, "\t").replace(/ /g, "_");
 	}
 }
 
@@ -95,5 +95,13 @@ function pages(){
 }
 
 function projects(){
-	return [];
+	return [
+	    "Music Management Website",
+        "Path Finding Program",
+        "Twitter Wall",
+        "Game of Life",
+        "Colour Matching Game",
+        "Chemical Reaction Computation",
+        "Camera Motion Tracker"
+    ];
 }
