@@ -28,7 +28,7 @@ function openPage(page) {
             var data = "<div style=\"text-align: center\">\n" +
                 "  <h1>Error 404</h1>\n" +
                 "  <p>Ben Clark | Portfolio</p>\n" +
-                "  <p>This page could not be found. Sorry of any inconvenience.</p>\n" +
+                "  <p>This page could not be found. Sorry for any inconvenience.</p>\n" +
                 "</div>";
 
             document.getElementById("htmlSeg").innerHTML = data;
