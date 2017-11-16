@@ -6,7 +6,7 @@ var dirCount = 0;
 
 $( function() {
     //console.log("drag");
-    //$( "#contents" ).draggable();
+    $( "#contents" ).draggable({ containment: "#dragContainer", scroll: false });
     //$( "#leftWindows" ).draggable();
 } );
 
@@ -36,7 +36,7 @@ function checkMobile() {
 
 //Prevents backspace?
 $(document).keydown(function(e) {
-    console.log(e.which);
+    //console.log(e.which);
 	if(e.which == 27){
 		//escape
 		closeCurrent();
@@ -161,7 +161,7 @@ function append(str) {
 function cmdAppend(str){
 
     if(str != null) {
-        keys = str.length - 1;
+        keys = str.length;
     } else {
         keys = 0;
     }

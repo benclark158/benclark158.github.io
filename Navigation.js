@@ -113,6 +113,9 @@ function onMaximiseButton(){
 			isMax = 0;
 		}
 	}
+	
+	$("#contents").animate({left: "0px"});
+	$("#contents").animate({top: "0px"});
 }
 
 function onMinimiseButton(){
@@ -122,6 +125,9 @@ function onMinimiseButton(){
 		$("#leftWindows").animate({opacity: '1'}, "fast");
 		$("#leftWindows").removeClass("noPointerEvnt");
 		isMin = 1;
+		
+		$("#contents").animate({left: "0px"});
+		$("#contents").animate({top: "0px"});
 	}
 }
 
