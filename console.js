@@ -42,7 +42,11 @@ $(document).keydown(function(e) {
 		closeCurrent();
 	} else if(e.which >= 33 && e.which <= 40){
 		//up down left right home end pageup pagedown
-        e.preventDefault();
+		
+		if(isWeb == 1){
+			return;
+		}
+		e.preventDefault();
         if(e.which == 38){
             //up
             if(dirCount < commands.length) {
