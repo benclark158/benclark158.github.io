@@ -43,7 +43,7 @@ $(document).keydown(function(e) {
 	} else if(e.which >= 33 && e.which <= 40){
 		//up down left right home end pageup pagedown
 		
-		if(isWeb == 1){
+		if(isWeb == 1 && (e.which == 38 || e.which == 40)){
 			return;
 		}
 		e.preventDefault();
