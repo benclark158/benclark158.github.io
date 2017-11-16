@@ -9,7 +9,7 @@ This project was done as part of one of my first year modules, G51DBI. In this m
 
 There were a few other requirements such as including ajax, jQuery and implementing a method of searching the records. But appart from that there were no limits on the coursework and we were free to add additional features in order to gain more marks.
 
-<img src="https://benclark158.github.io/docs/projects/imgs/music_ss.jpg"></img>
+<img style="border: 1px solid black;" src="https://benclark158.github.io/docs/projects/imgs/music_ss.JPG"></img>
 
 At the end of the project I had managed to fully implement the following features:
  * Adding artists/CDs/Tracks

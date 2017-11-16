@@ -83,7 +83,7 @@ function runDefault(reason){
 
 function inArray(array, value){
 	for(var i = 0; i < array.length; i++){
-		if(array[i] == value){
+		if(array[i].replace(/,/g, "\t").replace(/ /g, "_") == value){
 			return true;
 		}
 	}
