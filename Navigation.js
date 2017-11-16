@@ -136,7 +136,7 @@ function openWebWindow(){
 		$("#webWindow").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
 		isWeb = 1;
 		
-		$("console").blur();
+		$("#console").blur();
 	}
 }
 
@@ -147,7 +147,7 @@ function closeWebWindow(){
 		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
 		//document.getElementById("webWindow").innerHTML = "<div></div>";
 		
-		$("console").focus();
+		$("#console").focus();
 		
 		isWeb = 0;
 	}
