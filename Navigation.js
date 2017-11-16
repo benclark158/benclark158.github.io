@@ -135,6 +135,8 @@ function openWebWindow(){
 		$("#webWindow").removeClass("noPointerEvnt");
 		$("#webWindow").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
 		isWeb = 1;
+		
+		$("console").blur();
 	}
 }
 
@@ -144,6 +146,9 @@ function closeWebWindow(){
 		$("#webWindow").addClass("noPointerEvnt");
 		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
 		//document.getElementById("webWindow").innerHTML = "<div></div>";
+		
+		$("console").focus();
+		
 		isWeb = 0;
 	}
 }
