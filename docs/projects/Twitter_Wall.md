@@ -7,7 +7,7 @@
 
 For this project I was tasked with creating a Twitter interface that allows you to tweet at a user of your choice, and see tweets from a specific search term. 
 
-<img style="border: 1px solid black; display: block; margin: auto; width: 40%" src="https://benclark158.github.io/docs/projects/imgs/twitterwall1.jpg">
+<img style="border: 1px solid black; display: block; margin: auto; width: 75%" src="https://benclark158.github.io/docs/projects/imgs/twitterwall1.jpg">
 
 This project was given to me as I wanted to do some programming at the start of my 2nd year doing A-level computer science. I programmed this application using C# using Visual Studio to create part of the interface, however most of this was done procedurally. 
 
