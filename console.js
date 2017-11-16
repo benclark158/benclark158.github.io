@@ -85,8 +85,7 @@ $(document).keydown(function(e) {
         parseCommand();
         keys = 0;
         append(newCommand());
-    }
-	if((e.which >= 32 && e.which <= 255)){
+    } else if((e.which >= 32 && e.which <= 255)){
 		//else
 		countKeys();
 	}
