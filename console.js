@@ -36,10 +36,13 @@ function checkMobile() {
 
 //Prevents backspace?
 $(document).keydown(function(e) {
-    //console.log(e.which);
+    console.log(e.which);
 	if(e.which == 27){
 		//escape
 		closeCurrent();
+	} else if((e.which >= 112 && e.which <= 123) || e.which == 45 || e.which == 46){
+		//e.preventDefault();
+		return;
 	} else if(e.which >= 33 && e.which <= 40){
 		//up down left right home end pageup pagedown
 		
