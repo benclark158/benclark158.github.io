@@ -36,7 +36,7 @@ function checkMobile() {
 
 //Prevents backspace?
 $(document).keydown(function(e) {
-    console.log(e.which);
+    //console.log(e.which);
 	if(e.which == 27){
 		//escape
 		closeCurrent();
@@ -76,6 +76,7 @@ $(document).keydown(function(e) {
         }
     } else if (e.which == 13) {
 		//enter
+		dirCount = 0;
         e.preventDefault();
         parseCommand();
         keys = 0;
@@ -154,7 +155,7 @@ function append(str) {
 function cmdAppend(str){
 
     if(str != null) {
-        keys = str.length;
+        keys = str.length - 1;
     } else {
         keys = 0;
     }
@@ -176,12 +177,13 @@ function clear(){
 }
 
 function parseCommand() {
-    var console = document.getElementById("console");
+    var terminal = document.getElementById("console");
 
-    if (console != null) {
-		var input = console.value.substr(console.value.length - keys);
+    if (terminal != null) {
+		var input = terminal.value.substr(terminal.value.length - keys);
 		var array = input.split(' ');
         var cmd = array[0];
+		
         append("\n");
         if(cmd == ''){
             return;
@@ -203,7 +205,7 @@ function parseCommand() {
         }
     }
     append("\n");
-    text = console.value;
+    text = terminal.value;
 }
 
 function whenClicked(){

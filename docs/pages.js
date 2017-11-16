@@ -14,7 +14,7 @@ function openPage(page) {
         success: function (data, status) {
             //create a success messsage
 
-            data = data.replace('This site is open source. <a href="https://github.com/benclark158/benclark158.github.io/edit/master/docs/' + page + '.md">Improve this page</a>.', 'Copyright Ben Clark 2017.');
+            data = data.replace('This site is open source. <a href="https://github.com/benclark158/benclark158.github.io/edit/master/docs/' + page + '.md">Improve this page</a>.', '&copy Copyright Ben Clark 2017.');
 
             data = data.replace('<h1><a href="https://benclark158.github.io/">benclark158.github.io</a></h1>', '');
 
