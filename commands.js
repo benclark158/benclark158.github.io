@@ -21,7 +21,8 @@ function runID(args, consoleName){
 
 	if(args.length > 0 && args[1] == 'x'){
 		str += "\nisMin :\t" + isMin[consoleName] + "\n";
-		str += "isMax :\t" + isMax[consoleName];
+		str += "isMax :\t" + isMax[consoleName] + "\n";
+		str += "inWeb :\t" + isWeb;
 	}
 	return str;
 }
