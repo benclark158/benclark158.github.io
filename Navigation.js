@@ -103,6 +103,7 @@ function onMaximiseButton(){
 		$("#contents").animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
 		$("#leftWindows").animate({opacity: '0'}, "fast");
 		$("#leftWindows").addClass("noPointerEvnt");
+		$("#taskbar").addClass("noPointerEvnt");
 		isMin = 0;
 	} else {
 		if(isMax == 0){
@@ -120,9 +121,14 @@ function onMaximiseButton(){
 function onMinimiseButton(){
 	if(isMin == 0){
 		$("#contents").addClass("noPointerEvnt");
-		$("#contents").animate({left: "0px", top: "0px", width: '0%', height: '0%', opacity: '0'}, "fast");
+		
+		$("#contents").css("position", "absolute");
+		
+		$("#contents").animate({left: "0%", top: "0%", width: '0%', height: '0%', opacity: '0'}, "fast");
+		
 		$("#leftWindows").animate({opacity: '1'}, "fast");
 		$("#leftWindows").removeClass("noPointerEvnt");
+		$("#taskbar").removeClass("noPointerEvnt");
 		isMin = 1;
 	}
 }
