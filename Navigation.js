@@ -51,8 +51,8 @@ function onCloseButton(consoleName){
 function openWebWindow(consoleName){
 	if(isWeb == 0){
 		$("#contents-" + consoleName).addClass("noPointerEvnt");
-		$("#webWindow-" + consoleName).removeClass("noPointerEvnt");
-		$("#webWindow-" + consoleName).animate({width: '100%', height: '100%', opacity: '1'}, "fast");
+		$("#webWindow").removeClass("noPointerEvnt");
+		$("#webWindow").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
 		isWeb = 1;
 
 		$("#console-" + consoleName).blur();
@@ -62,8 +62,8 @@ function openWebWindow(consoleName){
 function closeWebWindow(consoleName){
 	if(isWeb == 1){
 		$("#contents-" + consoleName).removeClass("noPointerEvnt");
-		$("#webWindow-" + consoleName).addClass("noPointerEvnt");
-		$("#webWindow-" + consoleName).animate({width: '50%', height: '50%', opacity: '0'}, "fast");
+		$("#webWindow").addClass("noPointerEvnt");
+		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
 		//document.getElementById("webWindow").innerHTML = "<div></div>";
 
 		openPage("emptyPage");
