@@ -1,5 +1,5 @@
 
-function matchCommand(command, args){
+function matchCommand(command, args, consoleName){
 	switch(command){
 		case "open":
 			return runOpen(args);
@@ -9,9 +9,21 @@ function matchCommand(command, args){
 			return runStart(args);
         case "project":
             return runProject(args);
+		case 'id':
+			return runID(args, consoleName);
 		default:
 			return runDefault('unknown command - ' + command);
 	} 
+}
+
+function runID(args, consoleName){
+	var str = "ID :\tconsole-" + consoleName;
+
+	if(args.length > 0 && args[1] == 'x'){
+		str += "\nisMin :\t" + isMin[consoleName] + "\n";
+		str += "isMax :\t" + isMax[consoleName];
+	}
+	return str;
 }
 
 /*

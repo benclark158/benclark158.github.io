@@ -16,6 +16,7 @@
 	<script type="text/javascript" src="console.js"></script>
 	<script type="text/javascript" src="commands.js"></script>
 	<script type="text/javascript" src="docs/pages.js"></script>
+	<script type="text/javascript" src="windows.js"></script>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -50,9 +51,10 @@
 			<!-- End of WebViewer Code-->
 			
 			<!-- Left Window Code Goes Here -->
-			<div id="taskbar-` + consoleName + `" class="conts centers windowLeft noPointerEvnt">
+			<div id="taskbar" class="conts centers windowLeft noPointerEvnt">
 				<div id="leftWindowCodeHere"></div>
 			</div>
+			<button id="clickMe" type="button" value="clickme" onclick="createWindow(makeid());" ></button>
 		</div>
 	</div>
 </div>

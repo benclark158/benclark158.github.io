@@ -1,18 +1,15 @@
-var keys = 0;
-var text = "";
-var commands = [];
-var dirCount = 0;
+var keys = {};
+var text = {};
+var commands = {};
+var dirCount = {};
 
 
 $( function() {
     //console.log("drag");
-    $( "#contents" ).draggable({ containment: "#dragContainer", scroll: false });
 } );
 
 //Sets text on load
 window.onload = function WindowLoad(event) {
-    append(help());
-    append(newCommand());
 	if(checkMobile()){
 		//alert("MOBILE DEVICE");
 		openWebWindow();
@@ -38,61 +35,65 @@ $(document).keydown(function(e) {
     //console.log(e.which);
 	
 	var focusElement = document.activeElement;
-	
-	if(e.which == 27){
-		//escape
-		closeCurrent();
-	} else if((e.which >= 112 && e.which <= 123) || e.which == 45 || e.which == 46){
-		//e.preventDefault();
-		return;
-	} else if(e.which >= 33 && e.which <= 40){
-		//up down left right home end pageup pagedown
+	console.log("focusID - " + focusElement.id);
 
-		if(isWeb == 1 && (e.which == 38 || e.which == 40)){
+	if(focusElement.id.toString().includes("console-")) {
+		var consoleName = focusElement.id.replace(/console-/g, "");
+		if (e.which == 27) {
+			//escape
+			closeCurrent(consoleName);
+		} else if ((e.which >= 112 && e.which <= 123) || e.which == 45 || e.which == 46) {
+			//e.preventDefault();
 			return;
+		} else if (e.which >= 33 && e.which <= 40) {
+			//up down left right home end pageup pagedown
+
+			if (isWeb == 1 && (e.which == 38 || e.which == 40)) {
+				return;
+			}
+			e.preventDefault();
+			if (e.which == 38) {
+				//up
+				if (dirCount[consoleName] < commands[consoleName].length) {
+					dirCount[consoleName]++;
+				}
+
+				if (dirCount[consoleName] != 0) {
+					var cmd = commands[consoleName][commands.length - dirCount[consoleName]];
+					cmdAppend(cmd, consoleName[consoleName]);
+				} else {
+					cmdAppend("", consoleName[consoleName]);
+				}
+			} else if (e.which == 40) {
+				if (dirCount[consoleName] > 0) {
+					dirCount[consoleName]--;
+				}
+
+				if (dirCount[consoleName] != 0) {
+					var cmd = commands[consoleName][commands[consoleName].length - dirCount[consoleName]];
+					cmdAppend(cmd, consoleName);
+				} else {
+					cmdAppend("", consoleName);
+				}
+			}
+		} else if (e.which == 8) {
+			//backspace
+			if (keys[consoleName] <= 0) {
+				e.preventDefault();
+			} else {
+				keys[consoleName]--;
+			}
+		} else if (e.which == 13) {
+			//enter
+			dirCount[consoleName] = 0;
+			e.preventDefault();
+			parseCommand(consoleName);
+			keys[consoleName] = 0;
+			append(newCommand(), consoleName);
+		} else if ((e.which >= 32 && e.which <= 255)) {
+			//else
+			countKeys(consoleName);
 		}
-		e.preventDefault();
-        if(e.which == 38){
-            //up
-            if(dirCount < commands.length) {
-                dirCount++;
-            }
-
-            if(dirCount != 0) {
-                var cmd = commands[commands.length - dirCount];
-                cmdAppend(cmd);
-            } else {
-                cmdAppend("");
-            }
-        } else if(e.which == 40){
-            if(dirCount > 0){
-                dirCount--;
-            }
-
-            if(dirCount != 0) {
-                var cmd = commands[commands.length - dirCount];
-                cmdAppend(cmd);
-            } else {
-                cmdAppend("");
-            }
-        }
-    } else if (e.which == 8) {
-		//backspace
-        if (keys <= 0) {
-            e.preventDefault();
-        } else {
-            keys--;
-        }
-    } else if (e.which == 13) {
-		//enter
-		dirCount = 0;
-        e.preventDefault();
-        parseCommand();
-        keys = 0;
-        append(newCommand());
-    } else if((e.which >= 32 && e.which <= 255)){
-		//else
-		countKeys();
 	}
 });
 
@@ -142,19 +143,22 @@ function ascii(){
 
 }
 
-function countKeys() {
-    keys++;
+function countKeys(consoleName) {
+	if(keys[consoleName] == null){
+		keys[consoleName] = 0;
+	}
+    keys[consoleName]++;
 }
 
 function append(str, consoleName) {
 
-    keys = 0;
+    keys[consoleName] = 0;
 
     var console = document.getElementById("console-" + consoleName);
 
     if (console != null) {
         console.value += str;
-        text += str;
+        text[consoleName] += str;
         console.scrollTop = console.scrollHeight
 
     }
@@ -163,15 +167,15 @@ function append(str, consoleName) {
 function cmdAppend(str, consoleName){
 
     if(str != null) {
-        keys = str.length;
+        keys[consoleName] = str.length;
     } else {
-        keys = 0;
+        keys[consoleName] = 0;
     }
 
     var console = document.getElementById("console-" + consoleName);
 
     if (console != null) {
-        console.value = text + str;
+        console.value = text[consoleName] + str;
         console.scrollTop = console.scrollHeight
     }
 }
@@ -188,23 +192,27 @@ function parseCommand(consoleName) {
     var terminal = document.getElementById("console-" + consoleName);
 
     if (terminal != null) {
-		var input = terminal.value.substr(terminal.value.length - keys);
+		var input = terminal.value.substr(terminal.value.length - keys[consoleName]);
 		var array = input.split(' ');
         var cmd = array[0];
 
-        append("\n");
+        append("\n", consoleName);
         if(cmd == ''){
             return;
         }
 
-        commands.push(input);
+        if(commands[consoleName] == null){
+			text[consoleName] = "";
+			commands[consoleName] = [];
+			dirCount[consoleName] = 0;
+		}
+        commands[consoleName].push(input);
 
 		if(cmd == "clear"){
 			clear(consoleName);
-			text = "";
+			text[consoleName] = "";
 			return;
-		}
-        else if(cmd == "ascii"){
+		} else if(cmd == "ascii"){
             append(ascii(), consoleName);
         } else if (cmd == "welcome"){
             append(help(), consoleName);
@@ -212,13 +220,13 @@ function parseCommand(consoleName) {
             append(matchCommand(cmd, array, consoleName), consoleName);
         }
     }
-    append("\n");
-    text = terminal.value;
+    append("\n", consoleName);
+    text[consoleName] = terminal.value;
 }
-/*
+
 function whenClicked(conName){
     //alert("i got a click");
-    var console = document.getElementById(conName);
+    var console = document.getElementById("console-" + conName);
 
     if (console != null) {
         var val = console.value.length;
@@ -226,4 +234,4 @@ function whenClicked(conName){
         console.selectionStart = val;
         console.selectionEnd = val;
     }
-}*/
+}

@@ -2,36 +2,34 @@
  * Created by Ben Clark on 30/07/2017.
  */
  
-var isMax = 0;
-var isMin = 0;
+var isMax = {};
+var isMin = {};
 var isWeb = 0;
 
 function onMaximiseButton(consoleName){
-	console.log("isMax - " + isMax);
-	console.log("isMin - " + isMin);
 
-	if(isMin == 1){
+	if(isMin[consoleName] == 1){
 		//make big from min
 		$("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
 		$("#leftWindows-" + consoleName).animate({opacity: '0'}, "fast");
 		$("#leftWindows-" + consoleName).addClass("noPointerEvnt");
-		$("#taskbar").addClass("noPointerEvnt");
-		isMin = 0;
+		//$("#taskbar").addClass("noPointerEvnt");
+		isMin[consoleName] = 0;
 	} else {
-		if(isMax == 0){
+		if(isMax[consoleName] == 0){
 			//make big
 			$("#contents-" + consoleName).animate({left: "0px", top: "0px", width: '100%', height: '100%', opacity: '1'}, "fast");
-			isMax = 1;
+			isMax[consoleName] = 1;
 		} else {
 			//make original
 			$("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
-			isMax = 0;
+			isMax[consoleName] = 0;
 		}
 	}
 }
 
 function onMinimiseButton(consoleName){
-	if(isMin == 0){
+	if(isMin[consoleName] == 0){
 		$("#contents-" + consoleName).addClass("noPointerEvnt");
 		
 		$("#contents-" + consoleName).css("position", "absolute");
@@ -41,13 +39,13 @@ function onMinimiseButton(consoleName){
 		$("#leftWindows-" + consoleName).animate({opacity: '1'}, "fast");
 		$("#leftWindows-" + consoleName).removeClass("noPointerEvnt");
 		$("#taskbar").removeClass("noPointerEvnt");
-		isMin = 1;
+		isMin[consoleName] = 1;
 	}
 }
 
 function onCloseButton(consoleName){
 	$("#contents-" + consoleName).animate({width: '0%', height: '0%', opacity: '0'}, "fast");
-	//remvoe window
+	removeWindow(consoleName);
 }
 
 function openWebWindow(consoleName){
@@ -79,7 +77,7 @@ function closeWebWindow(consoleName){
 function closeCurrent(consoleName){
 	if(isWeb == 1){
 		closeWebWindow(consoleName);
-	} else if(isMax == 1){
+	} else if(isMax[consoleName] == 1){
 		onMaximiseButton(consoleName);
 	} else {
 		onMinimiseButton(consoleName);
