@@ -97,37 +97,33 @@ var isWeb = 0;
 function onMaximiseButton(){
 	console.log("isMax - " + isMax);
 	console.log("isMin - " + isMin);
+
 	if(isMin == 1){
-		$("#contents").animate({width: '75%', height: '75%', opacity: '1'}, "fast");
+		//make big from min
+		$("#contents").animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
 		$("#leftWindows").animate({opacity: '0'}, "fast");
 		$("#leftWindows").addClass("noPointerEvnt");
-		
-		//
 		isMin = 0;
 	} else {
 		if(isMax == 0){
-			$("#contents").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
+			//make big
+			$("#contents").animate({left: "0px", top: "0px", width: '100%', height: '100%', opacity: '1'}, "fast");
 			isMax = 1;
 		} else {
-			$("#contents").animate({width: '75%', height: '75%', opacity: '1'}, "fast");
+			//make original
+			$("#contents").animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
 			isMax = 0;
 		}
 	}
-	
-	$("#contents").animate({left: "0px"});
-	$("#contents").animate({top: "0px"});
 }
 
 function onMinimiseButton(){
 	if(isMin == 0){
 		$("#contents").addClass("noPointerEvnt");
-		$("#contents").animate({width: '0%', height: '0%', opacity: '0'}, "fast");
+		$("#contents").animate({left: "0px", top: "0px", width: '0%', height: '0%', opacity: '0'}, "fast");
 		$("#leftWindows").animate({opacity: '1'}, "fast");
 		$("#leftWindows").removeClass("noPointerEvnt");
 		isMin = 1;
-		
-		$("#contents").animate({left: "0px"});
-		$("#contents").animate({top: "0px"});
 	}
 }
 
@@ -141,7 +137,7 @@ function openWebWindow(){
 		$("#webWindow").removeClass("noPointerEvnt");
 		$("#webWindow").animate({width: '100%', height: '100%', opacity: '1'}, "fast");
 		isWeb = 1;
-		
+
 		$("#console").blur();
 	}
 }
@@ -152,9 +148,9 @@ function closeWebWindow(){
 		$("#webWindow").addClass("noPointerEvnt");
 		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
 		//document.getElementById("webWindow").innerHTML = "<div></div>";
-		
+
 		$("#console").focus();
-		
+
 		isWeb = 0;
 	}
 }

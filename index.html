@@ -10,7 +10,7 @@
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
+
 	<script type="text/javascript" src="Background.js"></script>
 	<script type="text/javascript" src="Navigation.js"></script>
 	<script type="text/javascript" src="console.js"></script>
@@ -28,23 +28,7 @@
 <div id="overlay" style="">
 	<div id="page" style="">
 		<div id="dragContainer" class="conts guiContainer" style="width: 99.9999%; height: 99.9999%;">
-			<div id="leftWindows" class="windowLeft noPointerEvnt ui-widget-content" style="opacity: 0;">
-				<div class="minWindow">
-					Website Command Line
-					<div class="windowBar" style="display: inline;" onclick="onMaximiseButton();">
-						<span class="winButton minButton">
-							<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
-						</span>
-						<span class="winButton maxButton">
-							<span style="padding: 0px 4px; margin-left: 4px;">&square;</span>
-						</span>
-						<span class="winButton closeButton">
-							<span style="padding: 0px 4px; margin: 0px;">&times;</span>
-						</span>
-					</div>
-				</div>
-			</div>
-			<div class="conts centers consoleBox ui-widget-content" id="contents" style="pointer-events: all; width: 75%; height: 75%; padding-left: 0px; left: 0px; top: 0px;">
+			<div class="conts centers consoleBox ui-widget-content" id="contents" style="pointer-events: all; width: 75%; height: 75%; padding-left: 0px;">
 				<div id="windowBar" class="windowBar">
 					<span class="winButton minButton" onclick="onMinimiseButton();">
 						<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
@@ -69,36 +53,51 @@
 					</div>
 				</div>
 				<div id="htmlSeg" class="htmlPage">
-					
-				<div>
+					<div>
+					</div>
+				</div>
 			</div>
-		</div><!--
-		<div id="nav" style="z-index: 3; height: 100%; width: 60px;">
-			<nav class="navbar navbar-default" id="topNav" role="navigation" style="margin: 0px;">
-				<ul class="nav navbar-nav">
-					<li style="padding: 10px;"><a onclick="openSettingsModal()" style="padding: 5px;"><i class="fa fa-sliders fa-2x" aria-hidden="true"></i></a>
-					</li>
-				</ul>
-			</nav>
-			<div class="vcenter">
-				<nav class="navbar navbar-default" id="innerNav" role="navigation" style="margin: 0px;">
-					<ul class="nav navbar-nav">
-						<li style="padding: 10px;"><a onclick="clickNav('home')" style="padding: 5px;"><i class="fa fa-home fa-2x" aria-hidden="true"></i></a>
-						</li>
-						<li style="padding: 10px;"><a onclick="clickNav('projects')" style="padding: 5px;"><i class="fa fa-file-code-o fa-2x" aria-hidden="true"></i></a>
-						</li>
-						<li style="padding: 10px;"><a onclick="clickNav('about-me')" style="padding: 5px;"><i class="fa fa-user fa-2x" aria-hidden="true"></i></a>
-						</li>
-						<li style="padding: 10px;"><a onclick="clickNav('contact-me')" style="padding: 5px;"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
-						</li>
-					</ul>
-				</nav>
+			<div class="windowLeft noPointerEvnt">
+				<div id="leftWindows" class="minWindow noPointerEvnt ui-widget-content" style="opacity: 0;">
+					Website Command Line
+					<div class="windowBar" style="display: inline;" onclick="onMaximiseButton();">
+						<span class="winButton minButton">
+							<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
+						</span>
+						<span class="winButton maxButton">
+							<span style="padding: 0px 4px; margin-left: 4px;">&square;</span>
+						</span>
+						<span class="winButton closeButton">
+							<span style="padding: 0px 4px; margin: 0px;">&times;</span>
+						</span>
+					</div>
+				</div>
 			</div>
-		</div>-->
+		</div>
+	</div>
+</div>
+<canvas id="canvas" style="z-index: -1"></canvas>
+
+<!--
+
+<div id="leftWindows" class="windowLeft noPointerEvnt ui-widget-content" style="opacity: 0;">
+	<div class="minWindow">
+		Website Command Line
+		<div class="windowBar" style="display: inline;" onclick="onMaximiseButton();">
+			<span class="winButton minButton">
+				<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
+			</span>
+			<span class="winButton maxButton">
+				<span style="padding: 0px 4px; margin-left: 4px;">&square;</span>
+			</span>
+			<span class="winButton closeButton">
+				<span style="padding: 0px 4px; margin: 0px;">&times;</span>
+			</span>
+		</div>
 	</div>
 </div>
 
-<canvas id="canvas" style="z-index: -1"></canvas>
+-->
 
 </body>
 
