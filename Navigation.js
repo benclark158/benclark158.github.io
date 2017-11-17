@@ -155,6 +155,8 @@ function closeWebWindow(){
 		$("#webWindow").animate({width: '50%', height: '50%', opacity: '0'}, "fast");
 		//document.getElementById("webWindow").innerHTML = "<div></div>";
 
+		openPage("emptyPage");
+		
 		$("#console").focus();
 
 		isWeb = 0;
