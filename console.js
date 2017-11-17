@@ -36,6 +36,9 @@ function checkMobile() {
 //Prevents backspace?
 $(document).keydown(function(e) {
     //console.log(e.which);
+	
+	var focusElement = document.activeElement;
+	
 	if(e.which == 27){
 		//escape
 		closeCurrent();
@@ -143,11 +146,11 @@ function countKeys() {
     keys++;
 }
 
-function append(str) {
+function append(str, consoleName) {
 
     keys = 0;
 
-    var console = document.getElementById("console");
+    var console = document.getElementById("console-" + consoleName);
 
     if (console != null) {
         console.value += str;
@@ -157,7 +160,7 @@ function append(str) {
     }
 }
 
-function cmdAppend(str){
+function cmdAppend(str, consoleName){
 
     if(str != null) {
         keys = str.length;
@@ -165,7 +168,7 @@ function cmdAppend(str){
         keys = 0;
     }
 
-    var console = document.getElementById("console");
+    var console = document.getElementById("console-" + consoleName);
 
     if (console != null) {
         console.value = text + str;
@@ -173,16 +176,16 @@ function cmdAppend(str){
     }
 }
 
-function clear(){
-	var console = document.getElementById("console");
+function clear(consoleName){
+	var console = document.getElementById("console-" + consoleName);
 
     if (console != null) {
 		console.value = "";
 	}
 }
 
-function parseCommand() {
-    var terminal = document.getElementById("console");
+function parseCommand(consoleName) {
+    var terminal = document.getElementById("console-" + consoleName);
 
     if (terminal != null) {
 		var input = terminal.value.substr(terminal.value.length - keys);
@@ -197,25 +200,25 @@ function parseCommand() {
         commands.push(input);
 
 		if(cmd == "clear"){
-			clear();
+			clear(consoleName);
 			text = "";
 			return;
 		}
         else if(cmd == "ascii"){
-            append(ascii());
+            append(ascii(), consoleName);
         } else if (cmd == "welcome"){
-            append(help());
+            append(help(), consoleName);
         } else {
-            append(matchCommand(cmd, array));
+            append(matchCommand(cmd, array, consoleName), consoleName);
         }
     }
     append("\n");
     text = terminal.value;
 }
-
-function whenClicked(){
+/*
+function whenClicked(conName){
     //alert("i got a click");
-    var console = document.getElementById("console");
+    var console = document.getElementById(conName);
 
     if (console != null) {
         var val = console.value.length;
@@ -223,4 +226,4 @@ function whenClicked(){
         console.selectionStart = val;
         console.selectionEnd = val;
     }
-}
+}*/
