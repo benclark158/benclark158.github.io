@@ -60,9 +60,9 @@ $(document).keydown(function(e) {
 
 				if (dirCount[consoleName] != 0) {
 					var cmd = commands[consoleName][commands.length - dirCount[consoleName]];
-					cmdAppend(cmd, consoleName[consoleName]);
+					cmdAppend(cmd, consoleName);
 				} else {
-					cmdAppend("", consoleName[consoleName]);
+					cmdAppend("", consoleName);
 				}
 			} else if (e.which == 40) {
 				if (dirCount[consoleName] > 0) {
