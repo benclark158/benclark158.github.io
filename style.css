@@ -116,6 +116,18 @@ canvas, #overlay {
 	padding-top: 1%;
 }
 
+.newConsoleButton {
+
+	top: 87%;
+	left: 93%;
+	position: absolute;
+
+	width: 3%;
+	border-radius: 50%;
+	background-color: #696969;
+	cursor: pointer;
+}
+
 /*
 ==========================
 	Scrollbars

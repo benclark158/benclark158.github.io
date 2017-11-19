@@ -6,6 +6,7 @@ var dirCount = {};
 
 $( function() {
     //console.log("drag");
+    createWindow(makeid());
 } );
 
 //Sets text on load
@@ -224,9 +225,12 @@ function parseCommand(consoleName) {
     text[consoleName] = terminal.value;
 }
 
+var topIndex = 5;
+
 function whenClicked(conName){
     //alert("i got a click");
     var console = document.getElementById("console-" + conName);
+    var window = document.getElementById("contents-" + conName);
 
     if (console != null) {
         var val = console.value.length;
@@ -234,4 +238,9 @@ function whenClicked(conName){
         console.selectionStart = val;
         console.selectionEnd = val;
     }
+    if(window != null){
+		window.style.zIndex = topIndex;
+		topIndex++;
+        document.getElementById("newConsoleButton").style.zIndex = topIndex;
+	}
 }
