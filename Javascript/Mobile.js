@@ -45,7 +45,7 @@ function createNavBar(){
 			}
 			html += '</ul></li>';
 		} else {
-			html += '<li onclick="populatePage(\'' + allPages[i] + '\')"><a>' + allPages[i] + '</a></li>';
+			html += '<li onclick="populatePage(\'' + allPages[i].toLowerCase() + '\')"><a>' + allPages[i] + '</a></li>';
 		}
 	}
 	
