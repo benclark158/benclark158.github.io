@@ -11,9 +11,40 @@ function matchCommand(command, args, consoleName){
             return runProject(args);
 		case 'id':
 			return runID(args, consoleName);
+        case 'size':
+            return runSize(args, consoleName);
 		default:
 			return runDefault('unknown command - ' + command);
 	} 
+}
+
+function runSize(args, consoleName){
+    if(args.length == 2){
+        var con = document.getElementById("contents-" + consoleName);
+        switch(args[1]){
+            case 'big':
+                con.style.width = "75%";
+                con.style.height = "75%";
+                // noinspection JSAnnotator
+                con.getAttribute("data-size") = args[1];
+                return "Set size to " + args[1];
+            case 'medium':
+                con.style.width = "65%";
+                con.style.height = "65%";
+                // noinspection JSAnnotator
+                con.getAttribute("data-size") = args[1];
+                return "Set size to " + args[1];
+            case 'small':
+                con.style.width = "55%";
+                con.style.height = "55%";
+                // noinspection JSAnnotator
+                con.getAttribute("data-size") = args[1];
+                return "Set size to " + args[1];
+            default:
+                return "Please use 'size big|medium|small'";
+        }
+    }
+    return "Invalid params - Please use 'size big|medium|small'";
 }
 
 function runID(args, consoleName){

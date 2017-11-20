@@ -2,7 +2,7 @@
 function consoleCode(consoleName){
 	var str = '';
 	
-	str = `<div class="conts centers consoleBox ui-widget-content" id="contents-` + consoleName + `" style="pointer-events: all; width: 75%; height: 75%; opacity: 0;" onclick="whenClicked('` + consoleName +`')">
+	str = `<div class="conts centers consoleBox ui-widget-content" id="contents-` + consoleName + `" data-size="medium" style="pointer-events: all; width: 75%; height: 75%; opacity: 0;" onclick="whenClicked('` + consoleName +`')">
 				<div id="windowBar-` + consoleName + `" class="windowBar">
 					<span class="winButton minButton" onclick="onMinimiseButton('` + consoleName + `');">
 						<span style="padding: 0px 4px; margin-left: 4px;">&minus;</span>
