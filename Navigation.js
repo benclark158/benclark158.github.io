@@ -8,9 +8,24 @@ var isWeb = 0;
 
 function onMaximiseButton(consoleName){
 
+	var pos, size;
+	if(document.getElementById("contents-" + consoleName).getAttribute("data-size") == 'small'){
+		//small
+		pos = "22.5%";
+		size = "55%";
+	} else if(document.getElementById("contents-" + consoleName).getAttribute("data-size") == 'medium'){
+		//medium
+        pos = "17.5%";
+        size = "65%";
+	} else {
+		//big
+        pos = "12.5%";
+        size = "75%";
+	}
+
 	if(isMin[consoleName] == 1){
 		//make big from min
-		$("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
+		$("#contents-" + consoleName).animate({left: pos, top: pos, width: size, height: size, opacity: '1'}, "fast");
 		$("#leftWindows-" + consoleName).animate({opacity: '0'}, "fast");
 		$("#leftWindows-" + consoleName).addClass("noPointerEvnt");
 		//$("#taskbar").addClass("noPointerEvnt");
@@ -22,7 +37,7 @@ function onMaximiseButton(consoleName){
 			isMax[consoleName] = 1;
 		} else {
 			//make original
-			$("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: '75%', height: '75%', opacity: '1'}, "fast");
+			$("#contents-" + consoleName).animate({left: pos, top: pos, width: size, height: size, opacity: '1'}, "fast");
 			isMax[consoleName] = 0;
 		}
 	}

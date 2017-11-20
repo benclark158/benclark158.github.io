@@ -191,6 +191,7 @@ function clear(consoleName){
 
 function parseCommand(consoleName) {
     var terminal = document.getElementById("console-" + consoleName);
+    var cmdResult = "";
 
     if (terminal != null) {
 		var input = terminal.value.substr(terminal.value.length - keys[consoleName]);
@@ -214,14 +215,16 @@ function parseCommand(consoleName) {
 			text[consoleName] = "";
 			return;
 		} else if(cmd == "ascii"){
-            append(ascii(), consoleName);
+            append(cmdResult = ascii(), consoleName);
         } else if (cmd == "welcome"){
-            append(help(), consoleName);
+            append(cmdResult = help(), consoleName);
         } else {
-            append(matchCommand(cmd, array, consoleName), consoleName);
+            append(cmdResult = matchCommand(cmd, array, consoleName), consoleName);
         }
     }
-    append("\n", consoleName);
+    if(cmdResult != "") {
+        append("\n", consoleName);
+    }
     text[consoleName] = terminal.value;
 }
 

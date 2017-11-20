@@ -23,25 +23,25 @@ function runSize(args, consoleName){
         var con = document.getElementById("contents-" + consoleName);
         switch(args[1]){
             case 'big':
-                con.style.width = "75%";
-                con.style.height = "75%";
-                // noinspection JSAnnotator
-                con.getAttribute("data-size") = args[1];
-                return "Set size to " + args[1];
+
+                $("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: "75%", height: "75%"}, "fast");
+
+                con.setAttribute("data-size", args[1]);
+                return "";
             case 'medium':
-                con.style.width = "65%";
-                con.style.height = "65%";
-                // noinspection JSAnnotator
-                con.getAttribute("data-size") = args[1];
-                return "Set size to " + args[1];
+
+                $("#contents-" + consoleName).animate({left: "17.5%", top: "17.5%", width: "65%", height: "65%"}, "fast");
+
+                con.setAttribute("data-size", args[1]);
+                return "";
             case 'small':
-                con.style.width = "55%";
-                con.style.height = "55%";
-                // noinspection JSAnnotator
-                con.getAttribute("data-size") = args[1];
-                return "Set size to " + args[1];
+
+                $("#contents-" + consoleName).animate({left: "22.5%", top: "22.5%", width: "55%", height: "55%"}, "fast");
+
+                con.setAttribute("data-size", args[1]);
+                return "";
             default:
-                return "Please use 'size big|medium|small'";
+                return "Invalid size - Use 'size big|medium|small'";
         }
     }
     return "Invalid params - Please use 'size big|medium|small'";
