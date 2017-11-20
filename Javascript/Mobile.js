@@ -11,7 +11,7 @@ function populatePage(page){
 
 function populateProject(project){
 	var nav = createNavBar();
-	openProjectComplex(page, nav, '&copy Copyright Ben Clark 2017.');
+	openProjectComplex(project, nav, '&copy Copyright Ben Clark 2017.');
 
 }
 
