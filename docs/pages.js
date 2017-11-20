@@ -6,7 +6,9 @@ function openPage(page) {
 
 function openPageComplex(page, headReplacement, footerReplacement) {
 
-    if(page.toLowerCase() == "projects"){
+	page = page.toLowerCase();
+
+    if(page == "projects"){
         openProjectsPage();
         return;
     }
