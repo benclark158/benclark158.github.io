@@ -127,25 +127,9 @@ function runDefault(reason){
 
 function inArray(array, value){
 	for(var i = 0; i < array.length; i++){
-		if(array[i].replace(/,/g, "\t").replace(/ /g, "_") == value){
+		if(array[i].replace(/,/g, "\t").replace(/ /g, "_").toLowerCase() == value.toLowerCase()){
 			return true;
 		}
 	}
 	return false;
-}
-
-function pages(){
-	return ["home", "projects", "about"];
-}
-
-function projects(){
-	return [
-	    "Music Management Website",
-        "Path Finding Program",
-        "Twitter Wall",
-        "Game of Life",
-        "Colour Matching Game",
-        "Chemical Reaction Computation",
-        "Camera Motion Tracker"
-    ];
 }

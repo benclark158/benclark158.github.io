@@ -154,7 +154,7 @@ textarea::-webkit-scrollbar-thumb {
 	Some stuff?
 =========================
  */
-
+/*
 @media (min-width: 768px) {
 	.navbar
 	{
@@ -175,12 +175,25 @@ textarea::-webkit-scrollbar-thumb {
 		margin-right: 0;
 	}
 }
-
+*/
 a, #innerNav, #topNav, #nav{
 	background: #202020;
 	border-color: #202020;
 }
 
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: rgba(200, 200, 200, 1);
+	background-color: rgba(76, 76, 76, 1);
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: rgba(255, 255, 255, 1);
+	background-color: #333333;
+}
+
+/*
 nav a:hover {
 	color: #16a3a1 !important;
 }
@@ -190,3 +203,4 @@ nav a:hover {
 	top: 50%;
 	transform: translateY(-50%);
 }
+*/

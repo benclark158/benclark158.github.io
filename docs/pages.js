@@ -1,7 +1,12 @@
 
 function openPage(page) {
+	return openPageComplex(page, '', '&copy Copyright Ben Clark 2017.');
+}
 
-    if(page == "projects"){
+
+function openPageComplex(page, headReplacement, footerReplacement) {
+
+    if(page.toLowerCase() == "projects"){
         openProjectsPage();
         return;
     }
@@ -14,9 +19,9 @@ function openPage(page) {
         success: function (data, status) {
             //create a success messsage
 
-            data = data.replace('This site is open source. <a href="https://github.com/benclark158/benclark158.github.io/edit/master/docs/' + page + '.md">Improve this page</a>.', '&copy Copyright Ben Clark 2017.');
+            data = data.replace('This site is open source. <a href="https://github.com/benclark158/benclark158.github.io/edit/master/docs/' + page + '.md">Improve this page</a>.', footerReplacement);
 
-            data = data.replace('<h1><a href="https://benclark158.github.io/">benclark158.github.io</a></h1>', '');
+            data = data.replace('<h1><a href="https://benclark158.github.io/">benclark158.github.io</a></h1>', headReplacement);
 
             document.getElementById("htmlSeg").innerHTML = data;
         },
@@ -25,11 +30,11 @@ function openPage(page) {
             //alert("error outer");
             console.error("ajax failed :/");
 
-            var data = "<div style=\"text-align: center\">\n" +
+            var data = headReplacement + "<div style=\"text-align: center\">\n" +
                 "  <h1>Error 404</h1>\n" +
                 "  <p>Ben Clark | Portfolio</p>\n" +
                 "  <p>This page could not be found. Sorry for any inconvenience.</p>\n" +
-                "</div>";
+                "</div>" + footerReplacement;
 
             document.getElementById("htmlSeg").innerHTML = data;
         }
@@ -66,4 +71,20 @@ function openProjectsPage(){
 
 function openProject(project){
     return openPage("projects/" + project);
+}
+
+function pages(){
+	return ["Home", "Projects", "About"];
+}
+
+function projects(){
+	return [
+	    "Music Management Website",
+        "Path Finding Program",
+        "Twitter Wall",
+        "Game of Life",
+        "Colour Matching Game",
+        "Chemical Reaction Computation",
+        "Camera Motion Tracker"
+    ];
 }
