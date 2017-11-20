@@ -9,6 +9,12 @@ function populatePage(page){
 	openPageComplex(page, nav, '&copy Copyright Ben Clark 2017.');
 }
 
+function populateProject(project){
+	var nav = createNavBar();
+	openProjectComplex(page, nav, '&copy Copyright Ben Clark 2017.');
+
+}
+
 function createNavBar(){
 	var allPages = pages();
 	var allProjects = projects();
@@ -32,7 +38,10 @@ function createNavBar(){
 			html += '<ul class="dropdown-menu">';
 			
 			for(var p = 0; p < allProjects.length; p++){
-				html += '<li><a href="#">' + allProjects[p] + '</a></li>'
+				
+				var projectName = allProjects[i].replace(/,/g, "\t").replace(/ /g, "_");
+				
+				html += '<li onclick="populateProject(\'' + projectName + '\')"><a>' + allProjects[p] + '</a></li>'
 			}
 			html += '</ul></li>';
 		} else {

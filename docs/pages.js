@@ -3,6 +3,9 @@ function openPage(page) {
 	return openPageComplex(page, '', '&copy Copyright Ben Clark 2017.');
 }
 
+function openProjectComplex(project, headRep, footRep){
+    return openPageComplex("projects/" + project, headRep, footRep);
+}
 
 function openPageComplex(page, headReplacement, footerReplacement) {
 
@@ -72,7 +75,7 @@ function openProjectsPage(){
 }
 
 function openProject(project){
-    return openPage("projects/" + project);
+	return openProjectComplex(project, '', '&copy Copyright Ben Clark 2017.');
 }
 
 function pages(){
