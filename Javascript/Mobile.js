@@ -39,7 +39,7 @@ function createNavBar(){
 			
 			for(var p = 0; p < allProjects.length; p++){
 				
-				var projectName = allProjects[i].replace(/,/g, "\t").replace(/ /g, "_");
+				var projectName = allProjects[p].replace(/,/g, "\t").replace(/ /g, "_");
 				
 				html += '<li onclick="populateProject(\'' + projectName + '\')"><a>' + allProjects[p] + '</a></li>'
 			}

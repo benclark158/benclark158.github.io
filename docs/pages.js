@@ -9,9 +9,7 @@ function openProjectComplex(project, headRep, footRep){
 
 function openPageComplex(page, headReplacement, footerReplacement) {
 
-	page = page.toLowerCase();
-
-    if(page == "projects"){
+    if(page.toLowerCase() == "projects"){
         openProjectsPage();
         return;
     }
