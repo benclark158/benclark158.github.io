@@ -63,7 +63,8 @@ function runID(args, consoleName){
  * runs a GUI version of the system
  */
 function runStart(args){
-	//TODO
+	//Redirect the user to the mobile (GUI) site
+	redirectToMobile();
 }
 
 /*

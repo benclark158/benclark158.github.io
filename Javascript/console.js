@@ -13,9 +13,13 @@ $( function() {
 window.onload = function WindowLoad(event) {
 	if(checkMobile()){
 		//alert("MOBILE DEVICE");
-		openWebWindow();
+		redirectToMobile();
 	}
     //alert("Page is loaded");
+}
+
+function redirectToMobile(){
+	window.location = "mobile.html";
 }
 
 function checkMobile() {
