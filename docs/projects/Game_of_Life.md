@@ -33,6 +33,6 @@ That's the basics of Conaway's Game of Life - more information can be found [her
 
 So, onto my implementation of the Game of Life. At a trip home for a family event, I was talking to my cousin's boyfriend (studies Physics at UoN) who told me that he had spent some time developing a script in Python that implemented Conaway's Game of Life. This conversation sparked my interest, so that night, once I got home, I decided to attempt to implement it. Which is exactly what I did.
 
-<img style="border: 1px solid black; display: block; margin: auto;" src="https://benclark158.github.io/docs/projects/imgs/gameoflife1.jpg">
+<img style="border: 1px solid black; display: block; margin: auto;" src="https://benclark158.github.io/docs/projects/imgs/Game_of_Life_1.jpg">
 
 This project is only a small programming task, in respect to other projects I have worked on. However as I still include it, as no matter the size of project, it is important no matter what, and every project teaches you something that you didn't know.

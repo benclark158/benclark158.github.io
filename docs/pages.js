@@ -46,7 +46,7 @@ function openPageComplex(page, headReplacement, footerReplacement) {
 
 function openProjectsPage(){
 
-    var insert = "this is a project";
+    var insert = generateProjectList();
 
     $.ajax({
         url: "docs/projects.html",
@@ -70,6 +70,24 @@ function openProjectsPage(){
             console.error("ajax failed :/");
         }
     });
+}
+
+function generateProjectList(){
+	var listProjects = projects();
+	var html = "<div>";
+	
+	for(var i = 0; i < listProjects.length; i++){
+		var imgURL = "https://benclark158.github.io/docs/projects/imgs/" + listProjects[i] + "_1.jpg";
+		
+		html += '<div>';
+		
+		html += '<h2>' + listProjects[i] + '</h2>';
+		html += '<img src="' + imgURL + '">';
+		
+		html += '</div>';
+	}
+	html += '</div>';
+	return html;
 }
 
 function openProject(project){

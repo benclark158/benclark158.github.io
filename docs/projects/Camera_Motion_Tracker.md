@@ -13,7 +13,7 @@ After doing this with a range of free software tools, I found that it was often 
 
 My solution was to use a phone, that could be mounted to a camera system. The phone could then track the cameras movement using the orientation and accelerometer sensors in the phone. This data could then be saved to a text based file, which could then be converted into a format that common visual effects programs like Adobe After Effects and Blender will be able to work with.
 
-<img style="border: 1px solid black; display: block; margin: auto; width: 50%" src="https://benclark158.github.io/docs/projects/imgs/camtracker1.jpg">
+<img style="border: 1px solid black; display: block; margin: auto; width: 50%" src="https://benclark158.github.io/docs/projects/imgs/Camera_Motion_Tracker_1.jpg">
 
 As shown above, I managed to fully implement an Android app that does exactly this. However, I quickly found that when the accelerometer was reading the acceleration, gravity would also be measured (obviously). Hence I needed some way to counteract this, just to get its acceleration relative to starting point. This could have been done, using the orientation of the device. 
 

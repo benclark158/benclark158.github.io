@@ -7,7 +7,7 @@
 
 The path finding program was developed as a method of testing implementations of artificial intelligent techniques and methods, while I was studying my A-Levels.
 
-<img style="border: 1px solid black; display: block; margin: auto; width: 40%" src="https://benclark158.github.io/docs/projects/imgs/aiGame1.jpg">
+<img style="border: 1px solid black; display: block; margin: auto; width: 40%" src="https://benclark158.github.io/docs/projects/imgs/Path_Finding_Game_1.jpg">
 
 The program is written in C# and uses coloured picture boxes for the squares of the game. In the game the player has to move their "character" around a map avoiding the other coloured blocks or "ghosts" if a player hits one of these "ghosts" then they die and the game is over. The aim is for the player to collect all of the coins around the map, if the player does this then they win.
 
