@@ -77,7 +77,8 @@ function generateProjectList(){
 	var html = "<div>";
 	
 	for(var i = 0; i < listProjects.length; i++){
-		var imgURL = "https://benclark158.github.io/docs/projects/imgs/" + listProjects[i] + "_1.jpg";
+		var imgName = listProjects[i].replace(/ /g, "_");
+		var imgURL = "https://benclark158.github.io/docs/projects/imgs/" + imgName + "_1.jpg";
 		
 		html += '<div>';
 		
