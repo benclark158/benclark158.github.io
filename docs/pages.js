@@ -74,18 +74,18 @@ function openProjectsPage(){
 
 function generateProjectList(){
 	var listProjects = projects();
-	var html = "<div>";
+	var projectStyle = 'style="border: 1px solid black; display: block; margin: auto; width: 50%;"';
+
+	var html = '<div style="' + projectStyle + '">';
 	
 	for(var i = 0; i < listProjects.length; i++){
 		var imgName = listProjects[i].replace(/ /g, "_");
 		var imgURL = "https://benclark158.github.io/docs/projects/imgs/" + imgName + "_1.jpg";
-		
-		var imgStyle = 'style="border: 1px solid black; display: block; margin: auto; width: 50%;"';
-		
+				
 		html += '<div>';
 		
 		html += '<h2>' + listProjects[i] + '</h2>';
-		html += '<img ' + imgStyle +' src="' + imgURL + '">';
+		html += '<img ' + '' +' src="' + imgURL + '">';
 		
 		html += '</div>';
 	}
