@@ -80,10 +80,12 @@ function generateProjectList(){
 		var imgName = listProjects[i].replace(/ /g, "_");
 		var imgURL = "https://benclark158.github.io/docs/projects/imgs/" + imgName + "_1.jpg";
 		
+		var imgStyle = 'style="border: 1px solid black; display: block; margin: auto; width: 50%;"';
+		
 		html += '<div>';
 		
 		html += '<h2>' + listProjects[i] + '</h2>';
-		html += '<img src="' + imgURL + '">';
+		html += '<img ' + imgStyle +' src="' + imgURL + '">';
 		
 		html += '</div>';
 	}
