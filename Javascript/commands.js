@@ -22,7 +22,7 @@ function runSize(args, consoleName){
     if(args.length == 2){
         var con = document.getElementById("contents-" + consoleName);
         switch(args[1]){
-            case 'big':
+            case 'large':
 
                 $("#contents-" + consoleName).animate({left: "12.5%", top: "12.5%", width: "75%", height: "75%"}, "fast");
 
@@ -41,10 +41,10 @@ function runSize(args, consoleName){
                 con.setAttribute("data-size", args[1]);
                 return "";
             default:
-                return "Invalid size - Use 'size big|medium|small'";
+                return "Invalid size - Use 'size large|medium|small'";
         }
     }
-    return "Invalid params - Please use 'size big|medium|small'";
+    return "Invalid params - Please use 'size large|medium|small'";
 }
 
 function runID(args, consoleName){

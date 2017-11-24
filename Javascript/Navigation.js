@@ -50,7 +50,9 @@ function onMinimiseButton(consoleName){
 		$("#contents-" + consoleName).css("position", "absolute");
 		
 		$("#contents-" + consoleName).animate({left: "0%", top: "0%", width: '0%', height: '0%', opacity: '0'}, "fast");
-		
+
+		$("console-" + consoleName).blur();
+
 		$("#leftWindows-" + consoleName).animate({opacity: '1'}, "fast");
 		$("#leftWindows-" + consoleName).removeClass("noPointerEvnt");
 		$("#taskbar").removeClass("noPointerEvnt");
