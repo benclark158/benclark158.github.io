@@ -36,3 +36,5 @@ So, onto my implementation of the Game of Life. At a trip home for a family even
 <img style="border: 1px solid black; display: block; margin: auto;" src="https://benclark158.github.io/docs/projects/imgs/Game_of_Life_1.jpg">
 
 This project is only a small programming task, in respect to other projects I have worked on. However as I still include it, as no matter the size of project, it is important no matter what, and every project teaches you something that you didn't know.
+
+<button href="https://github.com/benclark158/GameOfLife">View Source Code</button>
