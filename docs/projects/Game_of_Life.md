@@ -37,4 +37,4 @@ So, onto my implementation of the Game of Life. At a trip home for a family even
 
 This project is only a small programming task, in respect to other projects I have worked on. However as I still include it, as no matter the size of project, it is important no matter what, and every project teaches you something that you didn't know.
 
-<button href="https://github.com/benclark158/GameOfLife">View Source Code</button>
+<a style="display: block; margin: auto;" href="https://github.com/benclark158/GameOfLife" class="btn btn-default">View Source Code</a>
