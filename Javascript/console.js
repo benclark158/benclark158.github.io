@@ -38,7 +38,7 @@ function checkMobile() {
 //Prevents backspace?
 $(document).keydown(function(e) {
     //console.log(e.which);
-	
+
 	var focusElement = document.activeElement;
 	console.log("focusID - " + focusElement.id);
 
@@ -107,15 +107,16 @@ function newCommand() {
 }
 
 function help() {
-    var str = "";
-    str += "===============================\n";
-    str += "  Ben Clark Portfolio Website\n";
-    str += "===============================\n\n";
-    str += "Welcome to my website! To navigate this site there are a number of commands you can use.\n";
-    str += "The basic commands are listed below. There are also some not listed, if you want to try and figure out what they are! ;)\n\n";
-    str += "\t1. ls - lists the pages that can be opened\n";
-    str += "\t2. open pagename - opens the page stated by pagename\n";
-	str += "\t3. start - runs the GUI version of this website (recommended less confident users)";
+  var str = "";
+  str += "===============================\n";
+  str += "  Ben Clark Portfolio Website\n";
+  str += "===============================\n\n";
+  str += "Welcome to my website! To navigate this site there are a number of commands you can use.\n";
+  str += "The basic commands are listed below. There are also some not listed, if you want to try and figure out what they are! ;)\n\n";
+  str += "\t1. ls - lists the pages that can be opened\n";
+  str += "\t2. open pagename - opens the page stated by pagename\n";
+	str += "\t3. start - runs the GUI version of this website (recommended less confident users)\n";
+  str += "\t4. help - gives you help on using other commands\n";
 	str += "\n";
     str += "Enjoy (Hint: think ASCII)\n\n";
 
