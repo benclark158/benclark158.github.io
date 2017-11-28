@@ -103,7 +103,7 @@ $(document).keydown(function(e) {
 });
 
 function newCommand() {
-    return "benclark@portfolio:~$ "
+    return "portfolio@benclark:~$ "
 }
 
 function help() {
