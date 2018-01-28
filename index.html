@@ -1,67 +1,46 @@
 <!doctype html>
 <html>
-
 <head>
 
-	<title>Portfolio | Ben Clark</title>
+<title>Portfolio | Ben Clark</title>
 
-	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<!--<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
-	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!--
+========================================
+		Remote resources
+========================================
+-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script><script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-	<script type="text/javascript" src="Javascript/Background.js"></script>
-	<script type="text/javascript" src="Javascript/Navigation.js"></script>
-	<script type="text/javascript" src="Javascript/console.js"></script>
-	<script type="text/javascript" src="Javascript/commands.js"></script>
-	<script type="text/javascript" src="Javascript/windows.js"></script>
-	<script type="text/javascript" src="docs/pages.js"></script>
+<!--
+========================================
+		  Local resources
+========================================
+-->
+<link href="CSS/style.css" rel="stylesheet">
+<script src="Javascript/HelperFunctions.js"></script>
+<script src="Javascript/jQueryWarning.js"></script>
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!--
+========================================
+	  Javascript Warning Message
+========================================
+-->
+<noscript>
+	<div class="jsWarningBanner"><h4 class="jsWarning">This site works better with Javascript</h4><h5 class="jsWarning">Turn on Javascript in your browser</h5></div>
+</noscript>
 
-	<link rel="stylesheet" href="style.css">
 </head>
+<body>
 
-<body onresize="resize()"><!--onclick="whenClicked('console');"-->
-
-
-<div id="overlay" style="">
-	<div id="page" style="">
-		<div id="dragContainer" class="conts guiContainer" style="width: 99.9999%; height: 99.9999%;">			
-			
-			<!-- Console Code Goes Here -->
-			
-			<div id="consoleCodeHere"></div>
-			
-			<!-- Start of WebViewer Code-->
-			<div class="conts centers noPointerEvnt webWindow" id="webWindow" style="width: 50%; height: 50%; opacity: 0">
-				<div class="webBar" style="text-align: right;">
-					<div class="windowBar" style="display: inline;" onclick="closeWebWindow();">
-						<span class="winButton closeButton">
-							<span style="padding: 0px 4px; margin: 0px;">&times;</span>
-						</span>
-					</div>
-				</div>
-				<div id="htmlSeg" class="htmlPage">
-					<div>
-					</div>
-				</div>
-			</div>
-			<!-- End of WebViewer Code-->
-			
-			<!-- Left Window Code Goes Here -->
-			<div id="taskbar" class="conts centers windowLeft noPointerEvnt">
-				<div id="leftWindowCodeHere"></div>
-			</div>
-			<div id="newConsoleButton" class="newConsoleButton" onclick="createWindow(makeid());">
-                <img src="assets/plus.png" style="width: 100%; height: 100%;">
-            </div>
-        </div>
+<div class="container">
+	<div class="row">
+		<h1>hello</h1>
 	</div>
 </div>
-<canvas id="canvas" style="z-index: -1"></canvas>
 
 </body>
-
 </html>

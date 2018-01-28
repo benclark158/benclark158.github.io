@@ -1,0 +1,19 @@
+/*
+	Style sheet
+*/
+
+.jsWarningBanner {
+	background-color: red;
+	color: white;
+	text-align: center;
+
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.jsWarning {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 3px;
+	font-weight: bold;
+}
